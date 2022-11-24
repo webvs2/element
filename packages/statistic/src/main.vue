@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { isNumber, ceil, fill, chain, multiply, padStart, reduce} from 'element-ui/src/utils/lodash';
+import { isNumber, ceil, fill, chain, multiply, padStart, reduce, isNull} from 'element-ui/src/utils/lodash';
 export default {
   name: 'ElStatistic',
   data() {
@@ -47,7 +47,7 @@ export default {
     },
     precision: {
       type: Number,
-      default: 0
+      default: null
     },
     value: {
       type: [String, Number],
@@ -111,7 +111,7 @@ export default {
       let { value, precision, groupSeparator, rate } = this;
 
       if (!isNumber(value)) return false;
-      if (precision) {
+      if (!isNull(precision)) {
         value = ceil(value, precision);
       }
 
