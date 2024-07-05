@@ -12,7 +12,15 @@
     text-align: center;
     color: #eee;
   }
-
+  #lts-banner {
+    background-color: rgb(230, 162, 60);
+    min-height: 30px;
+    padding: 5px 60px;
+    z-index: 19;
+    box-sizing: border-box;
+    text-align: center;
+    color: #eee;
+  }
   #v3-banner a {
     color: #FFF;
     font-weight: bold;
@@ -282,7 +290,7 @@
 </style>
 <template>
   <div class="headerWrapper">
-    <div id="v3-banner" v-if="isHome">
+    <!-- <div id="v3-banner" v-if="isHome">
       <template v-if="lang === 'zh-CN'">
         您正在浏览基于 Vue 2.x 的文档;
         <a href="https://element-plus.org/#/zh-CN">点击查看 Vue 3.x 版本。</a>
@@ -293,6 +301,15 @@
         You’re browsing the documentation of Element UI for Vue 2.x version.
         <a href="https://element-plus.org">Click here</a> for Vue 3.x version
       </template>
+    </div> -->
+    <div id="lts-banner" v-if="isHome">
+      <template v-if="lang === 'zh-CN'">
+       进入社区的长期支持版本（LTS）
+      </template>
+      <template v-else>
+        Currently in Long-Term Support Release (LTS) from the community
+      </template>
+    
     </div>
     <header class="header" ref="header">
       <div class="container">
